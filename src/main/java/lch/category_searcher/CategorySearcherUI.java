@@ -2,21 +2,16 @@ package lch.category_searcher;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Label;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.SwingWorker;
 
-import lch.category_searcher.ui.CategorySearcherWorker;
 import lch.category_searcher.ui.ProgressFrame;
 
 public class CategorySearcherUI extends JFrame{
@@ -103,12 +98,12 @@ public class CategorySearcherUI extends JFrame{
 	public static void main(String... args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                createAndShowGUI();
+                CategorySearcherUI.createAndShowGUI();
             }
         });
     }
 	
-	private static void createAndShowGUI() {
+	public static void createAndShowGUI() {
 		CategorySearcherUI s = new CategorySearcherUI();
 		setLocation(s);
 		s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

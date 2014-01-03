@@ -1,12 +1,19 @@
 package lch.category_searcher.end_to_end;
 
+import static lch.category_searcher.CategorySearcherUI.EXCEL_CHOOSER;
+import static lch.category_searcher.CategorySearcherUI.LOAD_BUTTON;
+import static lch.category_searcher.CategorySearcherUI.LOAD_FAIL_DIALOG;
+import static lch.category_searcher.CategorySearcherUI.LOAD_FAIL_DIALOG_TITLE;
+import static lch.category_searcher.CategorySearcherUI.MAIN_WINDOW;
+import static lch.category_searcher.CategorySearcherUI.OK_BUTTON;
+import static lch.category_searcher.CategorySearcherUI.PROGRESS_DIALOG;
+
 import java.awt.Component;
 
 import javax.swing.JButton;
 import javax.swing.JProgressBar;
 
 import lch.category_searcher.CategorySearcherUI;
-import static lch.category_searcher.CategorySearcherUI.*;
 
 import com.objogate.wl.swing.AWTEventQueueProber;
 import com.objogate.wl.swing.driver.ComponentDriver;
@@ -24,6 +31,7 @@ public class ApplicationRunner {
 	public static final String CORRECT_EXCEL = "correct.xls";
 	
 	public void run() {
+		///Main.main(null);
 		CategorySearcherUI.main();
 		mainWindow = driver(MAIN_WINDOW);
 	}
