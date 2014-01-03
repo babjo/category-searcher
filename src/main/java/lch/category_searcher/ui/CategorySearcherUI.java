@@ -1,4 +1,4 @@
-package lch.category_searcher;
+package lch.category_searcher.ui;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -12,7 +12,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lch.category_searcher.ui.ProgressFrame;
+import lch.category_searcher.CategorySearcher;
 
 public class CategorySearcherUI extends JFrame{
 
@@ -23,10 +23,9 @@ public class CategorySearcherUI extends JFrame{
 	public static final String LOAD_FAIL_DIALOG = "load_fail_dialog";
 	public static final String PROGRESS_DIALOG = "progress";
 	public static final String LOAD_FAIL_DIALOG_TITLE = "load fail";
+	public static final String CHOOSER_DEFAULT_PATH = "./";
 	
-	//public static final String CHOOSER_DEFAULT_PATH = "C:\\Users\\LCH\\Documents\\workspace-sts-3.2.0.RELEASE\\category-searcher\\test_excel";
-	public static final String CHOOSER_DEFAULT_PATH = CategorySearcherUI.class.getResource(".").getPath();
-	
+	private String fileChooserPath = CHOOSER_DEFAULT_PATH;
 	private CategorySearcher searcher = new CategorySearcher();
 	
 	public CategorySearcherUI(){
@@ -83,11 +82,19 @@ public class CategorySearcherUI extends JFrame{
 	
 	private JFileChooser fileChooser(String name) {
 		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setCurrentDirectory(new File(CHOOSER_DEFAULT_PATH));
+		fileChooser.setCurrentDirectory(new File(getFileChooserPath()));
 		fileChooser.setName(name);
 		return fileChooser;
 	}
 	
+	private String getFileChooserPath() {
+		return fileChooserPath;
+	}
+	
+	public void setFileChooserPath(String fileChooserPath){
+		this.fileChooserPath = fileChooserPath;
+	}
+
 	private JButton button(String text, String name) {
         JButton button = new JButton(text);
         button.setName(name);
@@ -95,22 +102,28 @@ public class CategorySearcherUI extends JFrame{
         return button;
     }
 	
-	public static void main(String... args) {
+	public static void start(final String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                CategorySearcherUI.createAndShowGUI();
+                CategorySearcherUI.createAndShowGUI(args);
             }
         });
     }
 	
-	public static void createAndShowGUI() {
+	public static void createAndShowGUI(String[] args) {
 		CategorySearcherUI s = new CategorySearcherUI();
+		setTestEnv(args, s);
 		setLocation(s);
 		s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		s.setName(MAIN_WINDOW);
 		s.setTitle("category-searcher");
 		s.pack();
 		s.setVisible(true);
+	}
+
+	private static void setTestEnv(String[] args, CategorySearcherUI s) {
+		if(args.length!=0)
+			s.setFileChooserPath(args[0]);
 	}
 
 	private static void setLocation(JFrame frame) {

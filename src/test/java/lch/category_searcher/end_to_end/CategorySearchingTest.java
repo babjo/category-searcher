@@ -22,5 +22,4 @@ public class CategorySearchingTest {
 		r.showProgressBar();
 		r.stop();
 	}
-	
 }

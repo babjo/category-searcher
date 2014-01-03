@@ -3,6 +3,8 @@ import java.io.File;
 
 import lch.category_searcher.CategorySearcher;
 import lch.category_searcher.crawler.CategoryCrawler;
+import lch.category_searcher.crawler.parser.Category;
+import lch.category_searcher.data_stream.ProductDataStream;
 import lch.category_searcher.verifier.Verifier;
 
 import org.junit.Before;
@@ -40,12 +42,25 @@ public class CategorySearcherTest {
 		searcher.search(null);
 	}
 
-	@Test
-	public void search_success(){
-		File dir = new File("./test_excel");
-		int expectFileNum = dir.list().length+1;
-		File correctFile = new File("./test_excel/correct.xls"); 
-		searcher.search(correctFile);
-		assertThat(dir.list().length, is(expectFileNum));
-	}
+//	@Test -> 보류 더 보충이 필요함.
+//	public void search_success(){
+//		Verifier excelVerifier = Mockito.mock(Verifier.class);
+//		CategoryCrawler crawler = Mockito.mock(CategoryCrawler.class);
+//		ProductDataStream dataStream = Mockito.mock(ProductDataStream.class);
+//		File correctFile = new File("./test_excel/correct.xls"); 
+//		
+//		searcher.setCategoryCrawler(crawler);
+//		searcher.setVerifier(excelVerifier);
+//		searcher.setProductDataStream(dataStream);
+//		
+//		Mockito.when(excelVerifier.isVaild(correctFile)).thenReturn(false);
+//		// 전체 개수를 구한다.
+//		// 전체 개수만큼 hasProduct에 true을 반환한다.
+//		// nextProductName은 걍 아무 값이나 반환한다.
+//		
+//		// 전체 개수만큼 hasProduct가 불러졌는가
+//		// nextProductName이 불려졌는가
+//		// 엑셀파일쓰기 함수가 불려졌는가
+//		searcher.search(correctFile);
+//	}
 }

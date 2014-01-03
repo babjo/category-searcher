@@ -1,19 +1,19 @@
 package lch.category_searcher.end_to_end;
 
-import static lch.category_searcher.CategorySearcherUI.EXCEL_CHOOSER;
-import static lch.category_searcher.CategorySearcherUI.LOAD_BUTTON;
-import static lch.category_searcher.CategorySearcherUI.LOAD_FAIL_DIALOG;
-import static lch.category_searcher.CategorySearcherUI.LOAD_FAIL_DIALOG_TITLE;
-import static lch.category_searcher.CategorySearcherUI.MAIN_WINDOW;
-import static lch.category_searcher.CategorySearcherUI.OK_BUTTON;
-import static lch.category_searcher.CategorySearcherUI.PROGRESS_DIALOG;
+import static lch.category_searcher.ui.CategorySearcherUI.EXCEL_CHOOSER;
+import static lch.category_searcher.ui.CategorySearcherUI.LOAD_BUTTON;
+import static lch.category_searcher.ui.CategorySearcherUI.LOAD_FAIL_DIALOG;
+import static lch.category_searcher.ui.CategorySearcherUI.LOAD_FAIL_DIALOG_TITLE;
+import static lch.category_searcher.ui.CategorySearcherUI.MAIN_WINDOW;
+import static lch.category_searcher.ui.CategorySearcherUI.OK_BUTTON;
+import static lch.category_searcher.ui.CategorySearcherUI.PROGRESS_DIALOG;
 
 import java.awt.Component;
 
 import javax.swing.JButton;
 import javax.swing.JProgressBar;
 
-import lch.category_searcher.CategorySearcherUI;
+import lch.category_searcher.Main;
 
 import com.objogate.wl.swing.AWTEventQueueProber;
 import com.objogate.wl.swing.driver.ComponentDriver;
@@ -29,10 +29,11 @@ public class ApplicationRunner {
 	JFrameDriver loadFailDialog;
 	public static final String INCORRECT_EXCEL = "incorrect.xls";
 	public static final String CORRECT_EXCEL = "correct.xls";
+	public static final String CHOOSER_TEST_PATH = "C:\\Users\\LCH\\Documents\\workspace-sts-3.2.0.RELEASE\\category-searcher\\test_excel\\";
 	
 	public void run() {
-		///Main.main(null);
-		CategorySearcherUI.main();
+		String args[] = {CHOOSER_TEST_PATH};
+		Main.main(args);
 		mainWindow = driver(MAIN_WINDOW);
 	}
 

@@ -10,7 +10,7 @@ import javax.swing.SwingWorker;
 
 import lch.category_searcher.CategorySearcher;
 
-public class CategorySearcherWorker extends SwingWorker<Void, Void> {
+public class CategorySearcherWorker extends SwingWorker<Void, Void>{
 
 	private File selectedFile;
 	private CategorySearcher searcher;

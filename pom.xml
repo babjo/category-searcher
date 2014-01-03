@@ -31,7 +31,7 @@
 	                <archive>
 	                    <manifest>
 	                        <!-- public static void main() 함수가 있는 클래스 지정 -->
-	                        <mainClass>lch.category_searcher.CategorySearcherUI</mainClass>
+	                        <mainClass>lch.category_searcher.Main</mainClass>
 	                         
 	                        <!-- jar 파일 META-INF/MANIFEST.MF 에 클래스패스 정보 추가 -->
 	                        <addClasspath>true</addClasspath>
