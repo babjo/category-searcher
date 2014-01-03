@@ -10,17 +10,17 @@ public class CategorySearchingTest {
 		r.run();
 		r.loadIncorrectFile();
 		r.showLoadFailDialog();
-		r.ok();
+		r.clickFailDialogOk();
 		r.stop();
 	}
 	
-//	@Test
-//	public void loadExcelSuccessBecauseCorrectExcelForm() {
-//		ApplicationRunner r = new ApplicationRunner();
-//		r.run();
-//		r.loadCorrectFile();
-//		r.showProgressBar();
-//		r.ok();
-//		r.stop();
-//	}
+	@Test
+	public void loadExcelSuccessBecauseCorrectExcelForm() {
+		ApplicationRunner r = new ApplicationRunner();
+		r.run();
+		r.loadCorrectFile();
+		r.showProgressBar();
+		r.stop();
+	}
+	
 }

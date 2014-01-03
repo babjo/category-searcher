@@ -1,4 +1,4 @@
-package lch.category_searcher;
+package lch.category_searcher.verifier;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,8 +12,11 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class ExcelVerifier implements Verifier {
 	
 	public static final int PRODUCTNAME_CELL = 8;
+	public static final int CATEGORY_CELL = 41;
 
 	public boolean isVaild(File file) {
+		if(file == null)
+			throw new NullPointerException("selecteFile is null");
 		Workbook wb;
 		try {
 			wb = WorkbookFactory.create(file);

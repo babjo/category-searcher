@@ -3,9 +3,9 @@ package lch.category_searcher.unit;
 import java.io.File;
 
 import lch.category_searcher.CategorySearcherUI;
-import lch.category_searcher.ExcelVerifier;
-import lch.category_searcher.Verifier;
 import lch.category_searcher.end_to_end.ApplicationRunner;
+import lch.category_searcher.verifier.ExcelVerifier;
+import lch.category_searcher.verifier.Verifier;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -46,18 +46,13 @@ public class ApplicationRunner {
 		loadFailDialog = driver(LOAD_FAIL_DIALOG);
 		loadFailDialog.hasTitle(LOAD_FAIL_DIALOG_TITLE);
 	}
-
-	public void ok() {
-		button(loadFailDialog, OK_BUTTON).click();
-	}
 	
-	public void stop() {
-		mainWindow.dispose();
+	public void showProgressBar() {
+		driver(PROGRESS_DIALOG);
 	}
 
-
-	public void showProgressBar() {
-		progressBar(mainWindow, "aa");
+	public void clickFailDialogOk() {
+		button(loadFailDialog, OK_BUTTON).click();
 	}
 	
 	private JProgressBarDriver progressBar(ComponentDriver<? extends Component> parentOrOwner, String name){
@@ -77,4 +72,7 @@ public class ApplicationRunner {
 		return new JFileChooserDriver(mainWindow, ComponentDriver.named(name));
 	}
 
+	public void stop() {
+		mainWindow.dispose();
+	}
 }

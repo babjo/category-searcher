@@ -1,4 +1,4 @@
-package lch.category_searcher;
+package lch.category_searcher.verifier;
 
 import java.io.File;
 
